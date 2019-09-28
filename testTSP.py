@@ -7,7 +7,22 @@ Created on Sat Sep 28 18:32:18 2019
 """
 import TSP
 
+the_list = []
+
 def test_read_from_file():
-        the_list = []
-        assert(TSP.load_nodes("test.tsp", the_list) == 5)
-        assert(the_list[-1]==(2,3))
+     assert(TSP.load_nodes("test.tsp", the_list) == 5)
+     assert(the_list[-1]==(2,3))
+        
+
+def test_distance_from_origen():
+    assert(TSP.distance((0,0), (5,0))==5)
+    assert(TSP.distance((0,0), (0,5))==5)
+
+def test_dstance_big_numbers():
+    origen = (793699,274913)
+    destination = (981665,218777)
+    assert(TSP.distance(origen, destination) == 196169)
+    
+
+    
+ 

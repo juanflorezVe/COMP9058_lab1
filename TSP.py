@@ -6,6 +6,8 @@ TSP algo
 w(u, v) = nint( sqrt( (x(u) -x(v))^2 + (y(u) -y(v))^2) )
 """
 import logging
+from math import sqrt
+ 
         
 
 def load_nodes(text_file, list_nodes):
@@ -13,6 +15,7 @@ def load_nodes(text_file, list_nodes):
     a list of tuples in list_nodes.
     There is no exception, so it assumes correct file format
     TODO: add error handling
+    TODO: use named tuple
     """
     logging.info("load_nodes starts with ", [text_file, list_nodes])
     with open(text_file)  as fl:
@@ -24,3 +27,11 @@ def load_nodes(text_file, list_nodes):
 
 
         
+def distance(origen, destination):
+    """ takes two tuplas and calculates the distance using
+        w(u, v) = nint( sqrt( (x(u) -x(v))^2 + (y(u) -y(v))^2) )
+    """
+    return round( sqrt( (origen[0] - destination[0])**2 + 
+                     (origen[1] -destination[1])**2) )
+    
+
