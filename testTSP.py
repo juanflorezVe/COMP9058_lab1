@@ -7,11 +7,11 @@ Created on Sat Sep 28 18:32:18 2019
 """
 import TSP
 
-the_list = []
+the_dir = {}
 
 def test_read_from_file():
-     assert(TSP.load_nodes("test.tsp", the_list) == 5)
-     assert(the_list[-1]==(2,3))
+     assert(TSP.load_nodes("test.tsp", the_dir) == 5)
+     assert(the_dir[5]==(2,3))
         
 
 def test_distance_from_origen():
