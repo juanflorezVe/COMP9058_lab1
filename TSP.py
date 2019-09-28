@@ -32,3 +32,27 @@ def distance(origen, destination):
                      (origen[1] -destination[1])**2) )
     
 
+def tsp_impl(input_dir, output_list, start=1):
+    """ takes input_dir, and gives a sorted list with the nodes visited in 
+    order """
+    
+    logging.info("tsp_impl with starts")
+    output_list.insert(0,start)
+    
+        
+    
+    for point in input_dir:
+        min_dist = curr_dis = 598989898
+        nearest_node_index = 0
+ 
+        if (point in output_list):
+            continue
+        for index, node in enumerate(output_list):
+            curr_dis = distance(input_dir[node], input_dir[point])
+            print("round {} trying node {} ".format(index, node ))
+            if curr_dis < min_dist:
+                min_dist = curr_dis
+                nearest_node_index = index
+        output_list.insert(nearest_node_index+1,point)
+        
+            

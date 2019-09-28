@@ -24,5 +24,13 @@ def test_dstance_big_numbers():
     assert(TSP.distance(origen, destination) == 196169)
     
 
+def test_tsp_impl():
+    input_dir = {1:(0,0),2:(20,0),3:(20,10),4:(0,10)}
+    output_list = []
+    TSP.tsp_impl(input_dir, output_list, start=1)
+    assert(output_list == [1, 4, 2, 3])
+
+    
+
     
  
