@@ -31,12 +31,12 @@ def test_nearest_node():
 
 
 
-
 def test_tsp_impl():
     input_dir = {1:(0,0),2:(20,0),3:(20,10),4:(0,10)}
     output_list = []
     total_dist = TSP.tsp_impl(input_dir, output_list, start=1)
     assert(output_list == [1, 4, 3, 2])
+    assert(40 == total_dist)
 
     
 test_tsp_impl()

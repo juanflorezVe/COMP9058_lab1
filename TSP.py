@@ -34,7 +34,7 @@ def distance(origen, destination):
 
 def nearest_node(index, dictionary, visited_list):
     """ returns the nearest node to the dictionary[index] in the
-        dictionary
+        dictionary avoiding the nodes from the visited_list
     """
     min_dis = 98888888888
     closest_node = index
