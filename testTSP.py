@@ -38,5 +38,10 @@ def test_tsp_impl():
     assert(output_list == [1, 4, 3, 2])
     assert(40 == total_dist)
 
+def test_main():
+    TSP.main(["input.tsp","output.tsp"])
+    with open("output.tsp") as outp:
+        assert(next(outp))
+        
     
 test_tsp_impl()

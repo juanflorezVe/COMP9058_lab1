@@ -1,9 +1,12 @@
 """
 TSP algo
 """
-
+import random
 import logging
+import sys
 from math import sqrt, inf
+
+
  
         
 
@@ -72,4 +75,36 @@ def tsp_impl(input_dir, output_list, start=1):
         o_point = index
     
     return cycle_lenght
+
+def main(args):
+    
+    if len(args) < 2:
+        print("ERROR, you need 2 arguments")
+        print(" you entered {} ".format(len(args)))
+        print(args)
+        pass
+    
+    elif len(args) > 2:
+        print("WARNING, too many arguments ")
+
+    dir_nodes ={}
+    out_list  =[]
+    total_dist = 0
+    
+    load_nodes(args[0], dir_nodes)
+    total_dist = tsp_impl(dir_nodes, out_list, start=random.randint(1,len(dir_nodes)))
+  
+    with open(args[1], 'w') as out:
+        out.write('{}\n'.format(total_dist))
+        for nd in out_list:
+            out.write('{}\n'.format(nd))
+    
+    print("Done")
+    
+        
+    
+    
+
+if __name__ == '__main__':
+    main(sys.argv[1:])
 
