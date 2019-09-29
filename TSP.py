@@ -3,7 +3,7 @@ TSP algo
 """
 
 import logging
-from math import sqrt
+from math import sqrt, inf
  
         
 
@@ -36,7 +36,7 @@ def nearest_node(index, dictionary, visited_list):
     """ returns the nearest node to the dictionary[index] in the
         dictionary avoiding the nodes from the visited_list
     """
-    min_dis = 98888888888
+    min_dis = inf
     closest_node = index
     for d_node in dictionary:
         if d_node == index:
